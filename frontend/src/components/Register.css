@@ -1,0 +1,14 @@
+.signup-form{
+    width: 500px;
+    align-items: center;
+}
+.signup-btn{
+    margin-top: 10px;
+   justify-items: center;
+   width: 500px;
+}
+
+.profile-img-card {
+    width: 200px;
+    height: 200px;
+}
