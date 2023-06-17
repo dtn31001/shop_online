@@ -22,7 +22,7 @@ public class UploadFileService {
 
     public ResponseEntity<?> uploadImage(MultipartFile file) throws IOException {
         ProductImage image = new ProductImage();
-     //   image.setName(Arrays.stream(Objects.requireNonNull(file.getOriginalFilename()).split("\\.")).findFirst().orElse(""));
+        image.setName(Arrays.stream(Objects.requireNonNull(file.getOriginalFilename()).split("\\.")).findFirst().orElse(""));
         image.setType(file.getContentType());
         image.setImageData(ImageUtil.compressImage(file.getBytes()));
         imageRepo.save(image);
@@ -31,7 +31,7 @@ public class UploadFileService {
 
     public void uploadImageFromProduct(MultipartFile file) throws IOException {
         ProductImage image = new ProductImage();
-     //   image.setName(Arrays.stream(Objects.requireNonNull(file.getOriginalFilename()).split("\\.")).findFirst().orElse(""));
+        image.setName(Arrays.stream(Objects.requireNonNull(file.getOriginalFilename()).split("\\.")).findFirst().orElse(""));
         image.setType(file.getContentType());
         image.setImageData(ImageUtil.compressImage(file.getBytes()));
         imageRepo.save(image);

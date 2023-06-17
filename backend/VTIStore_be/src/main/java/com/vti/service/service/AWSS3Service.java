@@ -5,10 +5,15 @@ import java.util.Map;
 import java.util.UUID;
 
 import com.cloudinary.Cloudinary;
+<<<<<<< HEAD
 import com.cloudinary.utils.ObjectUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+=======
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> origin/main
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -21,13 +26,21 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.vti.service.Iservice.IFileService;
 
 @Service
+<<<<<<< HEAD
+=======
+@RequiredArgsConstructor
+>>>>>>> origin/main
 public class AWSS3Service implements IFileService {
 
 //	private AmazonS3Client awS3Client;
 
 	@Autowired
+<<<<<<< HEAD
 	private Cloudinary cloudinary;
 
+=======
+	private final Cloudinary cloudinary;
+>>>>>>> origin/main
 
 	@Override
 	public String uploadFile(MultipartFile file) throws IOException {

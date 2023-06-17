@@ -26,8 +26,8 @@ public class ProductService implements IProductService {
 
 	@Autowired
 	ICatalogRepository catalogRepository;
-	@Autowired
-	AWSS3Service awss3Service;
+//	@Autowired
+//	AWSS3Service awss3Service;
 
 	@Autowired
 	FileService fileService;
@@ -64,7 +64,7 @@ public class ProductService implements IProductService {
 			MultipartFile file) throws IOException {
 		Catalog catalog = catalogRepository.findByName(catalogName);
 
-		String urlString = awss3Service.uploadFile(file);
+		String urlString = fileService.uploadFile(file);
 		Product product = new Product();
 		product.setName(name);  
 		product.setPrice(price);
@@ -77,9 +77,9 @@ public class ProductService implements IProductService {
 	}
 
 	@Override
-	public void updateProduct(int id, float price, String description, int discount, MultipartFile file) throws IOException {
+	public void updateProduct(int id, float price, String description, int discount, MultipartFile file) {
 		Product product = productRepository.findById(id).get();
-		String urlStringUp = awss3Service.uploadFile(file);
+		String urlStringUp = fileService.uploadFile(file);
 
 		product.setPrice(price);
 		product.setDescription(description);
