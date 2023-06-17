@@ -26,7 +26,7 @@ public interface IProductService {
 	void createProduct(String name, float price, String catalogName, String description, int discount,
 			MultipartFile file) throws IOException;
 
-	void updateProduct(int id, float price, String description, int discount, MultipartFile file);
+	void updateProduct(int id, float price, String description, int discount, MultipartFile file) throws IOException;
 
 
 

@@ -89,7 +89,7 @@ public class ProductController {
 			
 			@RequestParam float price, 
 			@RequestParam String description,
-			@RequestParam int discount) {
+			@RequestParam int discount) throws IOException {
 		productService.updateProduct(id, price, description, discount, file );
 		return new ResponseEntity<String>("Update successfully!", HttpStatus.OK);
 	}
